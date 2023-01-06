@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import '../styles/globals.css'
+import Playbar from '../components/Playbar'
 
 export default function App({ Component, pageProps }) {
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
+      <Playbar/>
     </div>
   </>
   )
