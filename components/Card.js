@@ -8,7 +8,7 @@ const Card = (props) => {
   const {info} = props
 
   return (
-    <Link href='#' className='bg-spotify-gray rounded-lg p-4 hover:bg-spotify-hovergray transition-all duration-300 group'>
+    <Link href='/album/patata' className='bg-spotify-gray rounded-lg p-4 hover:bg-spotify-hovergray transition-all duration-300 group'>
       <div className='mb-3 relative'>
         <Image
           src={info.image}

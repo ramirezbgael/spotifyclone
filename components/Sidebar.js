@@ -35,17 +35,17 @@ const Sidebar = (props) => {
         <nav>
           <ul className='flex flex-col gap-y-4'>
             <li>
-              <Link href='#' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
+              <Link onClick={() => setShowSideBar(false)} href='/home' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
                 <RiHome4Fill className='text-2xl' /> Home
               </Link>
             </li>
             <li>
-              <Link href='#' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
+              <Link onClick={() => setShowSideBar(false)} href='#' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
                 <RiSearch2Line className='text-2xl' /> Search
               </Link>
             </li>
             <li className='mb-8'>
-              <Link href='#' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
+              <Link onClick={() => setShowSideBar(false)} href='/library' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
                 <RiFoldersLine className='text-2xl' /> Library
               </Link>
             </li>
