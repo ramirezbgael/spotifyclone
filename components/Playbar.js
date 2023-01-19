@@ -26,7 +26,7 @@ const Playbar = () => {
   return (
     <div className='fixed h-20 left-0 bottom-0 md:ml-64 w-full md:w-[calc(100%-256px)] bg-black flex items-center justify-between md:justify-center p-4 z-40'>
       <Link href='#' className='md:mr-2'>
-        <Image className='rounded' src='https://i.scdn.co/image/ab67616d0000b2739c284a6855f4945dc5a3cd73' width={65} height={65}/>
+        <Image className='rounded' src='https://i.scdn.co/image/ab67616d0000b2739c284a6855f4945dc5a3cd73' width={65} height={65} alt='cover'/>
       </Link>
       <div className='mr-4 md:mr-0'>
         <h5 className='font-medium text-gray-200 mb-1'>

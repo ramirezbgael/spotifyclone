@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
     <title>Spotify Clone</title>
     <meta name="description" content="Spotify clone, using a Deezer API" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/icon.png" />
     </Head>
     <div className='bg-spotify-lightgray min-h-screen text-gray-300'>
       <Header setShowSideBar={setShowSideBar}/>

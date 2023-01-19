@@ -1,34 +1,54 @@
 import React, { useState, useEffect} from 'react'
-import { useRouter } from 'next/router'
-import axios from 'axios'
+import Image from 'next/image'
+import Track from '../../components/Track'
+import {RiPlayFill, RiHeartLine} from 'react-icons/ri'
 
 const Album = () => {
 
   const [albumData, setAlbumData] = useState({})
 
-  const getAlbum = async () => {
-    await axios.get('https://api.deezer.com/album/65500602')
-      .then(res=>{
-        setAlbumData(res.data)
-      })
-      .catch(err=>{
-        console.log(err.message)
-      })
-  }
+  const callAPI = async () => {
+    try {
+      const res = await fetch(`https://api.deezer.com/album/65500602`);
+      const data = await res.json()
+      setAlbumData(data)
+      console.log(albumData)
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    getAlbum()
-    console.log(albumData)
+    callAPI()
   }, []);
 
-  console.log(albumData.name)
-
-  const router = useRouter()
-  const {id} = router.query
-
   return (
-    <div  className="pt-28 p md:pl-72 p-8">
-      patata {`${albumData?.name}`}
+    <div className="pt-28 p md:pl-72 p-8">
+      <div className='flex gap-2 items-end'>
+        <Image
+          src={albumData.cover_big}
+          width={200}
+          height={200}
+          alt='Album'
+        />
+        <div>
+          <p>Album</p>
+          <h1 className='text-5xl font-extrabold mb-2 text-white'>{albumData.title}</h1>
+          <p className='text-xl'>{albumData.artist?.name}</p>
+          <p>{albumData.release_date}</p>
+        </div>
+      </div>
+      <div className='mt-4'>
+        <button className='p-2 mt-2 text-4xl bg-spotify-green rounded-full text-spotify-gray absolute'>
+          <RiPlayFill/>
+        </button>
+        <button className='ml-20 mt-4 text-4xl'>
+          <RiHeartLine/>
+        </button>
+      </div>
+      <div className='mt-4 flex flex-col gap-2 mb-20'>
+        {albumData.tracks?.data.map(track=><h1><Track track={track}/></h1>)}
+      </div>
     </div>
   )
 }
