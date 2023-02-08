@@ -14,8 +14,10 @@ const Header = (props) => {
         className='text-2xl hover:cursor-pointer p-2 box-content '/>
       </div>
       <div className='hidden md:flex items-center text-2xl gap-2'>
-        <RiArrowLeftSLine className='p-1 box-content hover:cursor-pointer bg-spotify-gray rounded-full'/>
-        <RiArrowRightSLine className='p-1 box-content hover:cursor-pointer bg-spotify-gray rounded-full'/>
+        <RiArrowLeftSLine className='p-1 box-content hover:cursor-pointer bg-spotify-gray rounded-full'>
+          <Link onClick={()=>console.log('clicked')} href='/'></Link>
+        </RiArrowLeftSLine>
+        <RiArrowRightSLine onClick={() => window.history.forward()} className='p-1 box-content hover:cursor-pointer bg-spotify-gray rounded-full'/>
       </div>
       <div className='flex items-center gap-6'>
         <Link href='#' className='hover:text-white transition-colors'>Sign Up</Link>

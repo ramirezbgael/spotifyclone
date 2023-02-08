@@ -2,14 +2,18 @@ import React, { useState, useEffect} from 'react'
 import Image from 'next/image'
 import Track from '../../components/Track'
 import {RiPlayFill, RiHeartLine} from 'react-icons/ri'
+import { useRouter } from "next/router";
 
 const Album = () => {
 
   const [albumData, setAlbumData] = useState({})
 
+  const router = useRouter();
+  const { id } = router.query;
+
   const callAPI = async () => {
     try {
-      const res = await fetch(`https://api.deezer.com/album/65500602`);
+      const res = await fetch(`https://api.deezer.com/album/${id}`);
       const data = await res.json()
       setAlbumData(data)
       console.log(albumData)

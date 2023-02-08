@@ -5,32 +5,38 @@ export default function Library() {
     {
       "image":"https://i.scdn.co/image/ab67616d0000b2739b752fbc57ef2461541c6ee8",
       "name":"Live from the Royal Albert Hall",
-      "info":"The Killers"
+      "info":"The Killers",
+      "id":"65500602",
     },
     {
       "image":"https://i.scdn.co/image/ab67616d0000b273696b4e67423edd64784bfbb4",
       "name":"Call me if you get lost",
-      "info":"Tyler, The Creator"
+      "info":"Tyler, The Creator",
+      "id":"239516692",
     },
     {
       "image": "https://i.scdn.co/image/ab67616d0000b2739b9b36b0e22870b9f542d937",
       "name":"Random Access Memories",
-      "info":"Daft Punk"
+      "info":"Daft Punk",
+      "id":"6575789",
     },
     {
       "image":"https://i.scdn.co/image/ab67616d00001e0255404f712deb84d0650a4b41",
       "name":"Stoney (Deluxe)",
-      "info":"Post Malone"
+      "info":"Post Malone",
+      "id":"14781033",
     },
     {
       "image":"https://i.scdn.co/image/ab67616d0000b2731a84d71391df7469c5ab8539",
       "name":"Wish You Where Here",
-      "info":"Pink Floyd"
+      "info":"Pink Floyd",
+      "id":"12114242",
     },
     {
       "image":"https://i.scdn.co/image/ab67616d0000b27336c5417732e53e23cb219246",
       "name":"MTV Unplugged In New York",
-      "info":"Nirvana"
+      "info":"Nirvana",
+      "id":"119282",
     }
   ]
   

@@ -38,7 +38,7 @@ export default function Home() {
     {
       "image":"https://i.scdn.co/image/ab67706f00000002ca5a7517156021292e5663a6",
       "name":"Peaceful Piano",
-      "info":"Relax and indulge with beautiful piano pieces"
+      "info":"Relax and indulge with beautiful piano pieces",
     },
     {
       "image":"https://i.scdn.co/image/ab67706f000000025d87659dcadef82dd0e73f56",
@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <div className="pt-28 p md:pl-72 p-8">
       <ListAlbums lists={lists} sectionName={'Spotify Playlists'}/>
-      <ListAlbums lists={lists2}sectionName={'Focus'}/>
+      <ListAlbums lists={lists2} sectionName={'Focus'}/>
     </div>
   )
 }
