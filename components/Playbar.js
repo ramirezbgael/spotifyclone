@@ -6,7 +6,7 @@ import { FaRandom } from "react-icons/fa";
 import { BiSkipPrevious, BiSkipNext, BiRepeat, BiListUl } from "react-icons/bi";
 import { AiFillPlayCircle, AiFillSound } from "react-icons/ai";
 import { TbMicrophone2 } from "react-icons/tb";
-import { connect } from "react-redux";
+
 
 {
   /*🚧 Developers working 🚧*/
