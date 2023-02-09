@@ -75,7 +75,7 @@ const Playbar = ( props ) => {
             </button>
             {/*===Here goes the audio source*/}
             <audio
-              src={currentSong}
+              src="https://cdns-preview-3.dzcdn.net/stream/c-3485e45690a964a3e53644ee66d63f5a-8.mp3"
               ref={audioRef}
               onLoadedData={handleLoadedData}
               onTimeUpdate={handleTimeUpdate}
