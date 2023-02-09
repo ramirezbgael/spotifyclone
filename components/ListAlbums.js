@@ -8,7 +8,7 @@ const ListAlbums = (props) => {
 
   return (
   <div className='mb-8'>
-    <div className='flex items-center justify-between mb-8'>
+    <div className='flex items-center justify-between mb-4'>
       <Link href='#' className='text-2xl font-bold text-gray-200 hover:underline'>{sectionName}</Link>
       <Link href="#" className='uppercase text-xs font-bold tracking-[2px] '>See all</Link>
     </div> 
