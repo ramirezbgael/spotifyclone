@@ -40,7 +40,7 @@ const Sidebar = (props) => {
               </Link>
             </li>
             <li>
-              <Link onClick={() => setShowSideBar(false)} href='#' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
+              <Link onClick={() => setShowSideBar(false)} href='/search' className='flex items-center gap-4 hover:text-gray-50 transition-colors'>
                 <RiSearch2Line className='text-2xl' /> Search
               </Link>
             </li>

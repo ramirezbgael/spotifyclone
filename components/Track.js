@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { RiPlayFill } from 'react-icons/ri';
 
-const Track = ({track}) => {
-  console.log(track)
+const Track = ({ track, count }) => {
+
+  const [trackNumber, setTrackNumber] = useState(()=>count);
+
+  
+  
   return (
-    <div className='flex rounded justify-between p-2 hover:cursor-pointer hover:bg-neutral-700 transition-all duration-300'>
-      <div className='flex gap-2'>
+    <div className='flex rounded justify-between p-2 hover:cursor-pointer hover:bg-neutral-700 transition-all duration-300 group'>
+      <div className='flex gap-3 items-center'>
+      <span className='absolute text-lg mr-2 opacity-0 group-hover:opacity-100 transition-all duration-1'><RiPlayFill/></span>
+      <span className='opacity-100 mr-2 text-sm group-hover:opacity-0 transition-all duration-1'>{trackNumber}</span> 
         <div>
           <p className='font-semibold text-white'>{track.title}</p>
           <p>{track.artist.name}</p>

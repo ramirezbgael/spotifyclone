@@ -33,10 +33,10 @@ export default function Home() {
       "id":"91598612"
     },
     {
-      "image":"https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a",
-      "name":"SOUR",
-      "info":"Olivia Rodrigo",
-      "id":"231552772"
+      "image":"https://i.scdn.co/image/ab67616d0000b2737fcead687e99583072cc217b",
+      "name":"Beauty Behind the Madness",
+      "info":"The Weeknd",
+      "id":"11107272"
     }
   ]
   
