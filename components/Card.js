@@ -16,7 +16,7 @@ const Card = (props) => {
           alt='Album'
           className='rounded drop-shadow-2xl mx-auto'
         />
-        <button className='p-2 text-2xl bg-spotify-green rounded-full text-spotify-gray absolute right-2 bottom-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-3 group-hover:translate-y-0 ease-out'>
+        <button className='p-2 text-4xl m-2 hover:bg-spotify-lightgreen bg-spotify-green rounded-full text-spotify-gray absolute right-2 bottom-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-3 group-hover:translate-y-0 ease-out'>
           <RiPlayFill/>
         </button>
       </div>

@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors:{
         spotify:{
+          lightgreen:"#62de8d",
           green: "#1DB954",
           gray: "#101010",
           lightgray: "#1d1d1d",

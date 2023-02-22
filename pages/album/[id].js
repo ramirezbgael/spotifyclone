@@ -55,7 +55,7 @@ const Album = () => {
         </div>
       </div>
       <div className='mt-4'>
-        <button className='p-2 mt-2 text-4xl bg-spotify-green rounded-full text-spotify-gray absolute'>
+        <button className='p-2 mt-2 ml-1 text-4xl hover:-translate-y-1 hover:bg-spotify-lightgreen bg-spotify-green rounded-full text-spotify-gray absolute transition-all duration-300'>
           <RiPlayFill/>
         </button>
         <button className='ml-20 mt-4 text-4xl' onClick={()=>heartClick()}>
