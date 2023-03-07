@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,35 +11,30 @@ import useFetch from "../hooks/useAPI";
 const Playbar = () => {
   const currentSong = "https://api.deezer.com/track/3135556";
   const { data } = useFetch(currentSong);
-  console.log(data);
-
-  const [liked, setLiked] = useState(false);
-
+  
   let audioRef = useRef();
-
+  
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentPercentage, setCurrentPercentage] = useState(0);
-
+  
   const handleLoadedData = () => {
     setDuration(audioRef.current.duration);
   };
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
+    handlePercentage()
   };
-
+  
   const handlePercentage = () => {
-    setCurrentPercentage((currentTime * 100) / duration);
+    setCurrentPercentage(Math.ceil((currentTime * 100) / duration));
   };
-
-  console.log(currentPercentage);
-
+  
   {
     /* === 🚧 ⤵️ Playing the song ⤵️ 🚧 */
   }
-
+  
   const [isPlaying, setIsPlaying] = useState(false);
-
   const handlePlay = () => {
     if (isPlaying == false) {
       setIsPlaying(true);
@@ -50,9 +45,25 @@ const Playbar = () => {
     }
   };
 
+  var ended = audioRef.current.ended;
+  console.log(ended)
+
+
+  {
+    /* 🚧⤵️ Heart button ⤵️🚧 */
+  }
+  const [liked, setLiked] = useState(false);
+  const handleLike = () => {
+    if (liked == false){
+      setLiked(true)
+    } else {
+      setLiked(false)
+    }
+  }
+  
   return (
     <div className="fixed h-20 left-0 bottom-0 md:ml-64 w-full md:w-[calc(100%-256px)] bg-black flex flex-col items-center justify-between md:justify-center z-40">
-      <div className="hidden md:block">
+      <div className="hidden absolute">
         <Image src={data?.album.cover_big} width={150} height={150} />
       </div>
       <div className=" h-3/4 w-full flex">
@@ -61,7 +72,7 @@ const Playbar = () => {
           <div>{data?.artist.name}</div>
         </div>
         <div className=" gap-2 pr-3 items-center flex justify-end w-1/4 h-full">
-          <div>
+          <div className="hover: cursor-pointer transition-all duration-200">
             {/* === 💹 Heart Button 💹*/}
             {liked ? (
               <svg
@@ -71,6 +82,7 @@ const Playbar = () => {
                 width="28"
                 height="28"
                 viewBox="0 0 48 48"
+                onClick={()=>handleLike()}
               >
                 <path
                   fill="#f55376"
@@ -89,6 +101,7 @@ const Playbar = () => {
                 width="28"
                 height="28"
                 viewBox="0,0,256,256"
+                onClick={()=>handleLike()}
               >
                 <g
                   fill="#ffffff"
@@ -115,7 +128,7 @@ const Playbar = () => {
           </div>
           <div>
             {/* === 💹 Play/Pause Button 💹 */}
-            {!isPlaying ? (
+            {!isPlaying || ended ? (
               <button
                 onClick={()=>handlePlay()}>
                 <svg
@@ -191,17 +204,18 @@ const Playbar = () => {
       </div>
       <div className="h-1/4 w-full">
         <audio
-          src="https://cdns-preview-3.dzcdn.net/stream/c-3485e45690a964a3e53644ee66d63f5a-8.mp3"
+          src={data?.preview}
           ref={audioRef}
           onLoadedData={handleLoadedData}
           onTimeUpdate={handleTimeUpdate}
           type="audio"
+          id="my-song"
         />
         <footer>
           <div className="w-full h-2 absolute bg-gray-500" />
           <div
             className="w-full mb-2 h-2 absolute bg-blue-100 transition-all"
-            style={{ width: `${90}%` }}
+            style={{ width: `${currentPercentage}%` }}
           />
         </footer>
       </div>
