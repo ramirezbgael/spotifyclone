@@ -14,7 +14,7 @@ const ListAlbums = (props) => {
     </div> 
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6'>
       {lists?.map(list=>(
-        <Card info={list}/>
+        <Card info={list} key={list.id}/>
       ))}
     </div>
   </div>
