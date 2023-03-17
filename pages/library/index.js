@@ -81,7 +81,7 @@ export default function Library() {
   
   return (
     <div className="pt-28 mb-8 md:pl-72 p-8">
-      <ListAlbums lists={lists} sectionName={'Your Favorites'}/>
+      <ListAlbums lists={lists} sectionName={'Your Favorites'} />
       <ListAlbums lists={lists2}sectionName={'Recently Played'}/>
     </div>
   )
